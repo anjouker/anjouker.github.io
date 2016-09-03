@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Anjouker的博客</title>
+  <subtitle>高冷的GOOD BOY</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://anjouker.github.io/"/>
+  <updated>2016-09-03T05:37:55.914Z</updated>
+  <id>http://anjouker.github.io/</id>
+  
+  <author>
+    <name>Anjouker</name>
+    <email>anjouker@gmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BWT算法</title>
+    <link href="http://anjouker.github.io/2016/09/02/BWT%E7%AE%97%E6%B3%95/"/>
+    <id>http://anjouker.github.io/2016/09/02/BWT算法/</id>
+    <published>2016-09-02T02:43:12.000Z</published>
+    <updated>2016-09-03T05:37:55.914Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="BWT算法"><a href="#BWT算法" class="headerlink" title="BWT算法"></a>BWT算法</h1><h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>Burrows–Wheeler变换（简称BWT，也称作块排序压缩），是一个被应用在数据压缩技术（如bzip2）中的算法。该算法于1994年被Michael Burrows和David Wheeler在位于加利福尼亚州帕洛阿尔托的DEC系统研究中心发明。它的基础是之前Wheeler在1983年发明的一种没有公开的转换方法。<br>巧妙的地方是，它可以根据重新排列后的字符串，算出原始的字符串，从而解压缩。<br><a id="more"></a></p>
+<h2 id="2-原理"><a href="#2-原理" class="headerlink" title="2. 原理"></a>2. 原理</h2><h3 id="2-1-编码"><a href="#2-1-编码" class="headerlink" title="2.1 编码"></a>2.1 编码</h3><p>算法将输入字符串的所有循环字符串按照字典序排序，并以排序后字符串形成的矩阵的最后一列为其输出。</p>
+<p>算法分3步：</p>
+<ol>
+<li>对算法输入的字符串进行循环左移（其实左移右移都一样），循环次数为输入字符串的长度。长度为n的字符串经过n次右移得到了n个长度为n的字符串（即下述表格中的所有的循环字符串）。</li>
+<li>然后将得到的n个字符串视作n个整体，按照字典顺序进行排序。</li>
+<li>将排序后的字符串依照顺序取其最后一个字母，得到一个新的长度为n的字符串，即为算法结果。</li>
+</ol>
+<p><img src="/asserts/img/bwt_pic_1.png" alt=""></p>
+<p>next值：在上述表格中，右边新排序的字串，对应到左边相同字串之下一个字串，所得到的新排序值<br>例如a a b r a c a d a b r在左边的下一个字串<br>是a b r a c a d a b r a，而这个字串的新排序值是2<br>因此a a b r a c a d a b r的next值纪录了2</p>
+<h3 id="2-2-解码"><a href="#2-2-解码" class="headerlink" title="2.2 解码"></a>2.2 解码</h3><p>进行简单的推理一下：<br>输出字符串（最后一列）是rdarcaaaabb（下面称为L串），那我们可以得到第一列为aaaaabbcdrr（下面称为F串），因为循环移位这一个特性，我们可以得到以下的相邻关系（最后一列的字母与相应位置的第一列的字母），ra，da，aa，ra，ca，ab，ab，ac，ad，br，br。<br>可以发现，这也就是上述表格中排序后的字符串块的前两个字符的集合，将这些两个字母的字符串按照字典顺序排序，得到aa，ab，ab，ac，ad，br，br，ca，da，ra，ra。则我们得到了上述表格中排序后的字符串块的第二列，a，b，b，c，d，r，r，a，a，a，a。<br>从而可以得到另一组相邻关系，raa，dab，aab，rac，cad，abr，abr，aca，ada，bra，bra，继续上述的推到过程可以得到长度为四的相邻关系，最后可以得到整个上述表格中排序后的字符串块。但是这样还是不知道原始的字符串，所以只要在源串的结束处加一个特殊字符，然后再求排序后的字符串块， 最终结束符放在最后的就是原始字符串了。 </p>
+<p>将上述过程总结可以得到：<br>L串我们将其编号</p>
+<table>
+<thead>
+<tr>
+<th>r</th>
+<th>d</th>
+<th>a</th>
+<th>r</th>
+<th>c</th>
+<th>a</th>
+<th>a</th>
+<th>a</th>
+<th>a</th>
+<th>b</th>
+<th>b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>F串我们将上面字母对应的编号写在字母下面</p>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>a</th>
+<th>a</th>
+<th>a</th>
+<th>a</th>
+<th>b</th>
+<th>b</th>
+<th>c</th>
+<th>d</th>
+<th>r</th>
+<th>r</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>4</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>可以根据上面L串和F串还原字符串：<br>从F串第三个a的6出发，找到L串中的5，直接对应下来，得到F串中的9，然后找到L串中的9，直接对应下来，得到F串中的0，以此类推。。。<br>6-&gt;10-&gt;3-&gt;7-&gt;4-&gt;8-&gt;1-&gt;5-&gt;9-&gt;0-&gt;2-&gt;6<br>将得到的数字作为下标在L串中取字母得到：<br>abracadabra</p>
+<p>至于原理就是因为BWT算法在生成字符串时是循环移位的，所以我们得到结果L串后，将其重新排序得到F串，L[i]的在原串中的后一位必定是F[i]。</p>
+<h2 id="3-代码"><a href="#3-代码" class="headerlink" title="3. 代码"></a>3. 代码</h2><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//TODO</span></div></pre></td></tr></table></figure>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/Burrows-Wheeler%E5%8F%98%E6%8D%A2" target="_blank" rel="external">Burrows-Wheeler变换 - 维基百科，自由的百科全书</a><br><a href="http://www.cnblogs.com/xudong-bupt/p/3763814.html" target="_blank" rel="external">BWT (Burrows–Wheeler_transform)数据转换算法 - 旭东的博客 - 博客园</a><br><a href="http://ice-cold.ruhoh.com/algorithm/bwt%E5%8E%8B%E7%BC%A9%E7%AE%97%E6%B3%95/" target="_blank" rel="external">BWT压缩算法</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;BWT算法&quot;&gt;&lt;a href=&quot;#BWT算法&quot; class=&quot;headerlink&quot; title=&quot;BWT算法&quot;&gt;&lt;/a&gt;BWT算法&lt;/h1&gt;&lt;h2 id=&quot;1-概述&quot;&gt;&lt;a href=&quot;#1-概述&quot; class=&quot;headerlink&quot; title=&quot;1. 概述&quot;&gt;&lt;/a&gt;1. 概述&lt;/h2&gt;&lt;p&gt;Burrows–Wheeler变换（简称BWT，也称作块排序压缩），是一个被应用在数据压缩技术（如bzip2）中的算法。该算法于1994年被Michael Burrows和David Wheeler在位于加利福尼亚州帕洛阿尔托的DEC系统研究中心发明。它的基础是之前Wheeler在1983年发明的一种没有公开的转换方法。&lt;br&gt;巧妙的地方是，它可以根据重新排列后的字符串，算出原始的字符串，从而解压缩。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://anjouker.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="压缩" scheme="http://anjouker.github.io/tags/%E5%8E%8B%E7%BC%A9/"/>
+    
+  </entry>
+  
+</feed>
