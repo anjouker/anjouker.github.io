@@ -1,28 +1,243 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Anjouker的博客</title>
-  <subtitle>高冷的GOOD BOY</subtitle>
-  <link href="/atom.xml" rel="self"/>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
   
-  <link href="http://anjouker.github.io/"/>
-  <updated>2016-09-03T09:25:02.717Z</updated>
-  <id>http://anjouker.github.io/</id>
+  <title>汇编语言读书笔记 | Anjouker的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.汇编语言 有3类指令组成
+汇编指令：机器码的助记符，有对应的机器码
+伪指令：没有对应的额机器码，由编译器执行，计算机并不执行。
+其他符号：如+、-、*、/等，由编译器识别，没有对应的机器码。
+
+核心为汇编指令，它决定了汇编语言的特性。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编语言读书笔记">
+<meta property="og:url" content="http://anjouker.github.io/2016/09/03/汇编语言读书笔记/index.html">
+<meta property="og:site_name" content="Anjouker的博客">
+<meta property="og:description" content="1.汇编语言 有3类指令组成
+汇编指令：机器码的助记符，有对应的机器码
+伪指令：没有对应的额机器码，由编译器执行，计算机并不执行。
+其他符号：如+、-、*、/等，由编译器识别，没有对应的机器码。
+
+核心为汇编指令，它决定了汇编语言的特性。">
+<meta property="og:updated_time" content="2016-09-03T09:25:02.717Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="汇编语言读书笔记">
+<meta name="twitter:description" content="1.汇编语言 有3类指令组成
+汇编指令：机器码的助记符，有对应的机器码
+伪指令：没有对应的额机器码，由编译器执行，计算机并不执行。
+其他符号：如+、-、*、/等，由编译器识别，没有对应的机器码。
+
+核心为汇编指令，它决定了汇编语言的特性。">
   
-  <author>
-    <name>Anjouker</name>
-    <email>anjouker@gmail.com</email>
-  </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+    <link rel="icon" href="/favicon.png">
   
-  <entry>
-    <title>汇编语言读书笔记</title>
-    <link href="http://anjouker.github.io/2016/09/03/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>http://anjouker.github.io/2016/09/03/汇编语言读书笔记/</id>
-    <published>2016-09-03T09:16:06.000Z</published>
-    <updated>2016-09-03T09:25:02.717Z</updated>
+  <link rel="stylesheet" href="/css/style.css">
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?0b8e8ee87e4708173f00d9048c309301";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/asserts/img/logo.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Anjouker</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">高冷的GOOD BOY</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/">随笔</a></li>
+				        
+							<li><a href="/">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/anjouker" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="google" target="_blank" href="#" title="google">google</a>
+					        
+								<a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/压缩/" style="font-size: 10px;">压缩</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">华南理工大学14级，软件工程。喜欢一切的技术，前端，后端，app，算法。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Anjouker</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/asserts/img/logo.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Anjouker</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">高冷的GOOD BOY</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/">随笔</a></li>
+		        
+					<li><a href="/">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/anjouker" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="google" target="_blank" href="#" title="google">google</a>
+			        
+						<a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-汇编语言读书笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/03/汇编语言读书笔记/" class="article-date">
+  	<time datetime="2016-09-03T09:16:06.000Z" itemprop="datePublished">Sep 3</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
     
-    <content type="html"><![CDATA[<h2 id="1-汇编语言-有3类指令组成"><a href="#1-汇编语言-有3类指令组成" class="headerlink" title="1.汇编语言 有3类指令组成"></a>1.<strong>汇编语言 有3类指令组成</strong></h2><ul>
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      汇编语言读书笔记
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/汇编/">汇编</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-汇编语言-有3类指令组成"><a href="#1-汇编语言-有3类指令组成" class="headerlink" title="1.汇编语言 有3类指令组成"></a>1.<strong>汇编语言 有3类指令组成</strong></h2><ul>
 <li>汇编指令：机器码的助记符，有对应的机器码</li>
 <li>伪指令：没有对应的额机器码，由编译器执行，计算机并不执行。</li>
 <li>其他符号：如+、-、*、/等，由编译器识别，没有对应的机器码。</li>
@@ -160,129 +375,105 @@
 <p>shr是逻辑右移指令，功能：<br>将一个寄存器或内存单元中的数据向右移位；<br>将最后移出的一位写入CF中；<br>最高位用0补充。</p>
 <p>以上</p>
 <h2 id="2015-03-09下午"><a href="#2015-03-09下午" class="headerlink" title="2015.03.09下午"></a>2015.03.09下午</h2><p>迁移自印象笔记</p>
-]]></content>
+
+      
+    </div>
     
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1-汇编语言-有3类指令组成&quot;&gt;&lt;a href=&quot;#1-汇编语言-有3类指令组成&quot; class=&quot;headerlink&quot; title=&quot;1.汇编语言 有3类指令组成&quot;&gt;&lt;/a&gt;1.&lt;strong&gt;汇编语言 有3类指令组成&lt;/strong&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;汇编指令：机器码的助记符，有对应的机器码&lt;/li&gt;
-&lt;li&gt;伪指令：没有对应的额机器码，由编译器执行，计算机并不执行。&lt;/li&gt;
-&lt;li&gt;其他符号：如+、-、*、/等，由编译器识别，没有对应的机器码。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;核心为&lt;em&gt;汇编指令&lt;/em&gt;，它决定了汇编语言的特性。&lt;/strong&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="汇编" scheme="http://anjouker.github.io/tags/%E6%B1%87%E7%BC%96/"/>
-    
-      <category term="笔记" scheme="http://anjouker.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
+  </div>
   
-  <entry>
-    <title>BWT算法</title>
-    <link href="http://anjouker.github.io/2016/09/02/BWT%E7%AE%97%E6%B3%95/"/>
-    <id>http://anjouker.github.io/2016/09/02/BWT算法/</id>
-    <published>2016-09-02T02:43:12.000Z</published>
-    <updated>2016-09-03T09:23:19.565Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>Burrows–Wheeler变换（简称BWT，也称作块排序压缩），是一个被应用在数据压缩技术（如bzip2）中的算法。该算法于1994年被Michael Burrows和David Wheeler在位于加利福尼亚州帕洛阿尔托的DEC系统研究中心发明。它的基础是之前Wheeler在1983年发明的一种没有公开的转换方法。<br>巧妙的地方是，它可以根据重新排列后的字符串，算出原始的字符串，从而解压缩。<br><a id="more"></a></p>
-<h2 id="2-原理"><a href="#2-原理" class="headerlink" title="2. 原理"></a>2. 原理</h2><h3 id="2-1-编码"><a href="#2-1-编码" class="headerlink" title="2.1 编码"></a>2.1 编码</h3><p>算法将输入字符串的所有循环字符串按照字典序排序，并以排序后字符串形成的矩阵的最后一列为其输出。</p>
-<p>算法分3步：</p>
-<ol>
-<li>对算法输入的字符串进行循环左移（其实左移右移都一样），循环次数为输入字符串的长度。长度为n的字符串经过n次右移得到了n个长度为n的字符串（即下述表格中的所有的循环字符串）。</li>
-<li>然后将得到的n个字符串视作n个整体，按照字典顺序进行排序。</li>
-<li>将排序后的字符串依照顺序取其最后一个字母，得到一个新的长度为n的字符串，即为算法结果。</li>
-</ol>
-<p><img src="/asserts/img/bwt_pic_1.png" alt=""></p>
-<p>next值：在上述表格中，右边新排序的字串，对应到左边相同字串之下一个字串，所得到的新排序值<br>例如a a b r a c a d a b r在左边的下一个字串<br>是a b r a c a d a b r a，而这个字串的新排序值是2<br>因此a a b r a c a d a b r的next值纪录了2</p>
-<h3 id="2-2-解码"><a href="#2-2-解码" class="headerlink" title="2.2 解码"></a>2.2 解码</h3><p>进行简单的推理一下：<br>输出字符串（最后一列）是rdarcaaaabb（下面称为L串），那我们可以得到第一列为aaaaabbcdrr（下面称为F串），因为循环移位这一个特性，我们可以得到以下的相邻关系（最后一列的字母与相应位置的第一列的字母），ra，da，aa，ra，ca，ab，ab，ac，ad，br，br。<br>可以发现，这也就是上述表格中排序后的字符串块的前两个字符的集合，将这些两个字母的字符串按照字典顺序排序，得到aa，ab，ab，ac，ad，br，br，ca，da，ra，ra。则我们得到了上述表格中排序后的字符串块的第二列，a，b，b，c，d，r，r，a，a，a，a。<br>从而可以得到另一组相邻关系，raa，dab，aab，rac，cad，abr，abr，aca，ada，bra，bra，继续上述的推到过程可以得到长度为四的相邻关系，最后可以得到整个上述表格中排序后的字符串块。但是这样还是不知道原始的字符串，所以只要在源串的结束处加一个特殊字符，然后再求排序后的字符串块， 最终结束符放在最后的就是原始字符串了。 </p>
-<p>将上述过程总结可以得到：<br>L串我们将其编号</p>
-<table>
-<thead>
-<tr>
-<th>r</th>
-<th>d</th>
-<th>a</th>
-<th>r</th>
-<th>c</th>
-<th>a</th>
-<th>a</th>
-<th>a</th>
-<th>a</th>
-<th>b</th>
-<th>b</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
-<td>8</td>
-<td>9</td>
-<td>10</td>
-</tr>
-</tbody>
-</table>
-<p>F串我们将上面字母对应的编号写在字母下面</p>
-<table>
-<thead>
-<tr>
-<th>a</th>
-<th>a</th>
-<th>a</th>
-<th>a</th>
-<th>a</th>
-<th>b</th>
-<th>b</th>
-<th>c</th>
-<th>d</th>
-<th>r</th>
-<th>r</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
-<td>8</td>
-<td>9</td>
-<td>10</td>
-<td>4</td>
-<td>1</td>
-<td>0</td>
-<td>3</td>
-</tr>
-</tbody>
-</table>
-<p>可以根据上面L串和F串还原字符串：<br>从F串第三个a的6出发，找到L串中的5，直接对应下来，得到F串中的9，然后找到L串中的9，直接对应下来，得到F串中的0，以此类推。。。<br>6-&gt;10-&gt;3-&gt;7-&gt;4-&gt;8-&gt;1-&gt;5-&gt;9-&gt;0-&gt;2-&gt;6<br>将得到的数字作为下标在L串中取字母得到：<br>abracadabra</p>
-<p>至于原理就是因为BWT算法在生成字符串时是循环移位的，所以我们得到结果L串后，将其重新排序得到F串，L[i]的在原串中的后一位必定是F[i]。</p>
-<h2 id="3-代码"><a href="#3-代码" class="headerlink" title="3. 代码"></a>3. 代码</h2><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//TODO</span></div></pre></td></tr></table></figure>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote>
-<p><a href="https://zh.wikipedia.org/wiki/Burrows-Wheeler%E5%8F%98%E6%8D%A2" target="_blank" rel="external">Burrows-Wheeler变换 - 维基百科，自由的百科全书</a><br><a href="http://www.cnblogs.com/xudong-bupt/p/3763814.html" target="_blank" rel="external">BWT (Burrows–Wheeler_transform)数据转换算法 - 旭东的博客 - 博客园</a><br><a href="http://ice-cold.ruhoh.com/algorithm/bwt%E5%8E%8B%E7%BC%A9%E7%AE%97%E6%B3%95/" target="_blank" rel="external">BWT压缩算法</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1-概述&quot;&gt;&lt;a href=&quot;#1-概述&quot; class=&quot;headerlink&quot; title=&quot;1. 概述&quot;&gt;&lt;/a&gt;1. 概述&lt;/h2&gt;&lt;p&gt;Burrows–Wheeler变换（简称BWT，也称作块排序压缩），是一个被应用在数据压缩技术（如bzip2）中的算法。该算法于1994年被Michael Burrows和David Wheeler在位于加利福尼亚州帕洛阿尔托的DEC系统研究中心发明。它的基础是之前Wheeler在1983年发明的一种没有公开的转换方法。&lt;br&gt;巧妙的地方是，它可以根据重新排列后的字符串，算出原始的字符串，从而解压缩。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://anjouker.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="压缩" scheme="http://anjouker.github.io/tags/%E5%8E%8B%E7%BC%A9/"/>
-    
-  </entry>
+<nav id="article-nav">
   
-</feed>
+  
+    <a href="/2016/09/02/BWT算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BWT算法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="汇编语言读书笔记" data-title="汇编语言读书笔记" data-url="http://anjouker.github.io/2016/09/03/汇编语言读书笔记/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"anjouker"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Anjouker
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: undefined,
+		animate: undefined,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: undefined
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
